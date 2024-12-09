@@ -23,7 +23,14 @@ const index = (request, result) => {
 
 // Show
 const show = (request, result) => {
-  result.json("Ti mostro una sola risorsa specifica");
+  // Prendo la stringa parametro URL (Definito nel file homeRoutes.js)
+  const parametroURL = parseInt(request.params.id);
+  // Prendo parametro corpo(body) della richiesta (Inviato da Postman che simula il client)
+  const parametroBody = request.body;
+  // Prendo l'oggetto query creato nell'url della richiesta
+  const oggettoQuery = request.query;
+
+  result.json(oggettoQuery);
 };
 // Store
 const store = (request, result) => {
